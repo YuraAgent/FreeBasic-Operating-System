@@ -1,0 +1,18 @@
+<DocType:Class1?>
+
+Lab_1 = Lab
+
+IQR_Lab = format {1}
+
+Lab_config = sys.lab
+
+Lab_2 = Lab
+
+Step_Config = @Lab.sys
+
+Protect = {imp:lab.1<module:4>,lab.2<module:3>}
+
+Lab_File = Lab.1, Lab.2
+
+Call_Error = Lab
+<Reg:Lab.info>
