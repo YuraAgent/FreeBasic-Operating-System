@@ -9,4 +9,3 @@ what's change:
 
 
 t.me\@SkyFerest_Channel
-x.com\@SkyFerest17
