@@ -1,28 +1,49 @@
-Type ButtonTrigger
-    ButtonX as ushort
-    ButtonY as ushort
-end type
-
-Sub Mouse(x as integer, y as integer)
-    line(x,y)-(x + 2,y + 7),28:line(x,y)-(x + 7,y + 2),28:line(x + 10,y + 10)-(x,y),28
-end sub
-
 Sub Panel()
     Draw "BM 1,1":Draw "C15":Draw "r637 d15 l637 u15":Draw "BM +1,1":Draw "P 15,15"
 end sub
-
+Sub Exclamatory_Tag(First_CircleX as integer, First_CircleY as integer, Circle_AnglePosX as single, Circle_AnglePosY as single, EX_posX as integer, EX_posY as integer)
+        circle(First_CircleX,First_CircleY),15,1,,,,F
+        circle(First_CircleX,First_CircleY),15,15
+        circle(Circle_AnglePosX,Circle_AnglePosY),5,15,,,4,F
+        circle(EX_posX,EX_posY),2,15,,,,f
+end sub
 Sub Button(x as integer, y as integer)
-    Draw string (x+10,y+5),"Menu",16:Draw string (x+55,y+5),"Edit",16
+    Draw string (x+9,y+5),"Menu",16:Draw string (x+58,y+5),"Edit",16
+    Draw string (x+109,y+5),"View",16
 end sub
-
+Sub ShutDown_Window(x as integer, y as integer)
+        draw "BM " & (x+238) & "," & (y+188):draw "C15":draw "R180 D100 L180 U100":draw "BM +1,1":draw "P 27,15"
+        
+        draw "BM " & (x+238) & "," & (y+188):draw "C15":draw "R180 D13 L180 U13":draw "BM +1,1":draw "P 28,15"
+        
+        draw "BM " & (x+343) & "," & (y+264):draw "C28":draw "R53 D16 L53 U16":draw "BM +1,1":draw "P 31,28"
+        
+        draw "BM " & (x+263) & "," & (y+264):draw "C28":draw "R53 D16 L53 U16":draw "BM +1,1":draw "P 31,28"
+        
+        draw string(x + 242, y + 192),"Shutdown",16
+        draw string(x + 283, y + 223),"Turn off system?",16
+end sub
+Sub Button_Action()
+        dim x as integer, y as integer
+        draw string(x + 347, y + 269),"Cancel",16
+        draw string(x + 283, y + 269),"Ok",16
+end sub
+Sub ContentsForTheShutDown()
+        ShutDown_Window(0,0)
+        Exclamatory_Tag(260, 226, 261.4, 223, 261, 234)
+end sub
 Sub Button_tag(x as integer,y as integer)
-    draw "BM " & x & "," & y:draw "C0":draw "R34 D13 L34 U13":draw "BM +1,1":draw "P 24,0"
+    draw "BM " & x & "," & y:draw "C24":draw "R46 D15 L46 U15":draw "BM +1,1":draw "P 24,24"
 end sub
-
+Sub ButtonSHT_tag(x as integer,y as integer)
+    draw "BM " & x & "," & y:draw "C0":draw "R53 D16 L53 U16":draw "BM +1,1":draw "P 24,0"
+end sub
 Sub Button_tag2(x as integer,y as integer)
-    draw "BM " & x & "," & y:draw "C0":draw "R34 D13 L34 U13":draw "BM +1,1":draw "P 24,0"
+    draw "BM " & x & "," & y:draw "C24":draw "R49 D15 L49 U15":draw "BM +1,1":draw "P 24,24"
 end sub
-
+sub Button_tag3(x as integer,y as integer)
+        draw "BM " & x & "," & y:draw "C24":draw "R52 D15 L52 U15":draw "BM +1,1":draw "P 24,24"
+end sub
 Sub Clock_button_tag(x as integer,y as integer)
     draw "BM 560,2":draw "C0":draw "R73 D13 L73 U13":draw "BM +1,1":draw "P 24,0"
 end sub
@@ -137,7 +158,7 @@ Sub Digital_Clock()
 end sub
 
 Sub Version_Tag()
-    draw String(460,5),"V0.3_Alpha",6
+    draw String(450,5),"V0.3.1_Alpha",6
 end sub
 
 Sub Tag_list(x as integer,y as integer)
