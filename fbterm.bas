@@ -1,5 +1,5 @@
 rem FbText terminal assing by the Cshell os
-
+rem It's not for QuickBasic!
 width 50,20
 sub commandShow
      print ">";
